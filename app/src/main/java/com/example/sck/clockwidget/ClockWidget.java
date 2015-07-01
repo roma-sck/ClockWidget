@@ -66,7 +66,7 @@ public class ClockWidget extends AppWidgetProvider{
     }
 
     /**
-     * starts sending broadcast messages every minute via AlarmManager
+     * starts sending broadcast messages every WIDGET_UPDATE_INTERVAL via AlarmManager
      * @param context Context
      */
     @Override
