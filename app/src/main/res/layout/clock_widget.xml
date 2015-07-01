@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Layout">
+
+<ImageView
+android:id="@+id/widget_bg"
+android:src="@drawable/widget_bg"
+    style="@style/WidgetBgStyle"/>
+
+<TextView
+android:id="@+id/time"
+    style="@style/TimeTextView"/>
+
+<TextView
+android:id="@+id/day_of_the_week"
+    style="@style/DayTextView"/>
+
+<TextView
+android:id="@+id/date"
+    style="@style/DateTextView"/>
+
+<ImageView
+android:id="@+id/config"
+android:layout_width="@dimen/cfg_ic_size"
+android:layout_height="@dimen/cfg_ic_size"
+android:src="@android:drawable/ic_menu_preferences" />
+
+</RelativeLayout>

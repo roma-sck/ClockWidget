@@ -1,0 +1,63 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WidgetBgStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:cropToPadding">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="BaseTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="TimeTextView" parent="BaseTextView">>
+        <item name="android:layout_marginTop">@dimen/timeText_margin</item>
+        <item name="android:layout_marginLeft">@dimen/timeText_margin</item>
+        <item name="android:text">@string/pv_time</item>
+        <item name="android:textSize">@dimen/timeText_Size</item>
+    </style>
+
+    <style name="DayTextView" parent="BaseTextView">>
+        <item name="android:layout_marginTop">@dimen/dayText_marginTop</item>
+        <item name="android:layout_marginRight">@dimen/dayText_marginRight</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">@string/pv_day</item>
+    </style>
+
+    <style name="DateTextView" parent="BaseTextView">>
+        <item name="android:layout_marginTop">@dimen/dateText_marginTop</item>
+        <item name="android:layout_marginRight">@dimen/dateText_marginRight</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">@string/pv_date</item>
+    </style>
+
+</resources>

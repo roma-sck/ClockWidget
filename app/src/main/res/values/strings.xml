@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">ClockWidget</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="btn_ok">Ok</string>
+    <string name="set_time_format_text">Set displaying time format</string>
+
+    <string name="pv_time">PreviewTime</string>
+    <string name="pv_day">PreviewDay</string>
+    <string name="pv_date">PreviewTime</string>
+
+</resources>
