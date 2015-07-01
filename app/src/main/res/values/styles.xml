@@ -17,6 +17,14 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="ConfigActTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActBar</item>
+    </style>
+
+    <style name="MyActBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:logo">@drawable/ic_clock</item>
+    </style>
+
     <style name="Layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>

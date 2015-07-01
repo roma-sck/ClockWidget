@@ -54,19 +54,13 @@ public class ClockWidget extends AppWidgetProvider{
         PendingIntent pIntent = PendingIntent.getActivity(context, widgetId, cfgIntent, 0);
         widgetView.setOnClickPendingIntent(R.id.config, pIntent);
 
-        // set update intent
-        Intent updIntent = new Intent(context, ClockWidget.class);
-        updIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-        updIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, new int[]{widgetId});
-        pIntent = PendingIntent.getBroadcast(context, widgetId, updIntent, 0);
-        widgetView.setOnClickPendingIntent(R.id.widget_bg, pIntent);
-
         // update widget
         appWidgetManager.updateAppWidget(widgetId, widgetView);
     }
 
     /**
      * starts sending broadcast messages every WIDGET_UPDATE_INTERVAL via AlarmManager
+     *
      * @param context Context
      */
     @Override
@@ -91,6 +85,12 @@ public class ClockWidget extends AppWidgetProvider{
         alarmMan.cancel(pIntent);
     }
 
+    /**
+     * handling update_clock_widget action
+     *
+     * @param context Context
+     * @param intent Intent
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
 

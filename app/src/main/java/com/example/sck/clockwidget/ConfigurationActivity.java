@@ -1,10 +1,13 @@
 package com.example.sck.clockwidget;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -54,5 +57,44 @@ public class ConfigurationActivity extends Activity{
         ClockWidget.updateWidget(this, AppWidgetManager.getInstance(this), mWidgetId);
         setResult(RESULT_OK, mResVal);
         finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_email:
+                createSendMailIntent();
+                break;
+            case R.id.action_about:
+                createAboutDialog();
+                break;
+            case R.id.action_exit:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void createSendMailIntent() {
+        Intent mailIntent = new Intent(Intent.ACTION_SEND);
+        mailIntent.setType("message/rfc822");
+        mailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"roma.sck@gmail.com"});
+        mailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Clock Widget report: ");
+        mailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "\n I like your app.");
+        startActivity(Intent.createChooser(mailIntent, "Send via:"));
+    }
+
+    private void createAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialogTitleAbout);
+        builder.setMessage(R.string.dialogMsgAbout);
+        AlertDialog ad = builder.create();
+        ad.show();
     }
 }
